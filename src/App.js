@@ -10,11 +10,12 @@ function WeatherApp() {
 
   const fetchWeather = async () => {
     if (!city) return;
-    setIsLoading(true);
+    // setIsLoading(true);
     setError("");
     setWeatherData(null); // Clear previous data when new request starts
   
     try {
+      setIsLoading(true);
       const response = await axios.get(
         `https://api.weatherapi.com/v1/current.json?key=5b07293f7dc4436c961145729250402&q=${city}`
       );
@@ -47,8 +48,8 @@ function WeatherApp() {
       </form>
 
       {isLoading && <p>Loading data…</p>}
-{!isLoading && error && <p>{error}</p>}
-{!isLoading && weatherData ? (
+      {!isLoading && error && <p>{error}</p>}
+     {!isLoading && weatherData ? (
   <div className="weather-cards">
     <div className="weather-card">
       <h3>Temperature</h3>
