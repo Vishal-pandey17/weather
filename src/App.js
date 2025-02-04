@@ -47,7 +47,7 @@ function WeatherApp() {
         <button type="submit">Search</button>
       </form>
 
-      {isLoading && <p>Loading data…</p>}
+      {isLoading && <p>Loading data...</p>}
       {!isLoading && error && <p>{error}</p>}
      {!isLoading && weatherData ? (
   <div className="weather-cards">
